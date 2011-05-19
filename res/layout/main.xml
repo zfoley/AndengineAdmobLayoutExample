@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <org.anddev.andengine.opengl.view.RenderSurfaceView
+        android:id="@+id/xmllayoutexample_rendersurfaceview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" 
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        />    
+    <!--  IF ADMOB is not serving ads to you, 
+    	  it is because there is no inventroy for your app yet.
+    	  just remove the line  
+    	  "ads:adUnitId="put Your Publisher Code Here"  (line 24)
+    	  It will display an error message where the admob ad would be.
+    	  you can use that for placement
+    -->
+	<com.google.ads.AdView android:id="@+id/adView"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_alignLeft="@id/xmllayoutexample_rendersurfaceview"
+                           ads:adUnitId="put Your Publisher Code Here"
+                           ads:adSize="BANNER" 
+                           ads:loadAdOnCreate="true"/>
+    <!--  
+    You can also use other view, not just admob. Here is a TextView you can place 
+    for example to display the text: "buy the ad-free version on android market!" -->
+    <!-- 
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/xmllayoutexample_rendersurfaceview"
+        android:text="@string/hello"/>
+         -->
+</RelativeLayout>
